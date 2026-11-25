@@ -1,3 +1,4 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,4 +335,869 @@ h3{
 }
 
 .result-line{
-  color:var(--mu
+  color:var(--muted);
+  font-size:.85rem;
+  margin-top:12px;
+}
+
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  padding:30px;
+  border:1px dashed #b9cdbf;
+  border-radius:16px;
+  color:var(--muted);
+  background:#fff;
+}
+
+.announcement{
+  display:flex;
+  gap:13px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.announce-icon{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  border-radius:12px;
+  background:#eaf5ed;
+  display:grid;
+  place-items:center;
+}
+
+.announcement p{
+  margin:3px 0;
+  color:var(--muted);
+}
+
+.faq details{
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.faq summary{
+  font-weight:750;
+  color:var(--green);
+  cursor:pointer;
+}
+
+.contact-item{
+  display:flex;
+  gap:12px;
+  margin:15px 0;
+  color:var(--muted);
+}
+
+.contact-item b{
+  display:block;
+  color:var(--green);
+}
+
+.notice{
+  background:#fff8e7;
+  border:1px solid #f2dfae;
+  color:#77551b;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:.87rem;
+  margin:15px 0;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin:11px 0;
+}
+
+.field label{
+  font-size:.85rem;
+  font-weight:800;
+}
+
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:11px;
+  border:1px solid var(--line);
+  border-radius:9px;
+}
+
+.field textarea{min-height:100px}
+
+.admin-list{
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
+
+.admin-row{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.admin-row strong{
+  display:block;
+  color:var(--green);
+}
+
+.admin-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.hidden{display:none!important}
+
+footer{
+  background:#063d26;
+  color:#e1efe5;
+  padding:25px 22px;
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.researchers{
+  font-weight:800;
+  color:#f0dc79;
+}
+
+/* OPENING SCREEN */
+
+.welcome-screen{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  background:linear-gradient(
+    135deg,
+    #043d25,
+    #0b7545 65%,
+    #741f32
+  );
+  color:white;
+  transition:opacity .55s ease,visibility .55s ease;
+}
+
+.welcome-screen.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.welcome-content{
+  max-width:650px;
+  animation:appear .8s ease;
+}
+
+.welcome-logo{
+  width:170px;
+  height:170px;
+  object-fit:contain;
+  background:white;
+  border:5px solid var(--gold);
+  border-radius:50%;
+  padding:7px;
+  margin-bottom:18px;
+  box-shadow:0 10px 35px #0004;
+}
+
+.welcome-label{
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:4px;
+}
+
+.welcome-content h1{
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  margin:8px 0;
+}
+
+.welcome-subtitle{
+  letter-spacing:2px;
+  color:#e5f2e9;
+  font-size:.88rem;
+  margin-bottom:25px;
+}
+
+.welcome-button{
+  background:var(--gold);
+  color:#06452b;
+  border:0;
+  border-radius:30px;
+  padding:14px 28px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.welcome-button:hover{
+  background:white;
+  transform:translateY(-2px);
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:680px){
+  .nav-toggle{display:block}
+  .nav{position:relative}
+
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:68px;
+    left:12px;
+    right:12px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:10px;
+    box-shadow:var(--shadow);
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .navlinks.open{display:flex}
+  .navlinks button{text-align:left;padding:11px}
+  .brand img{width:43px;height:43px}
+  .hero-inner{padding:42px 19px}
+  .grid,.two-col{grid-template-columns:1fr}
+  .search-row{flex-direction:column}
+  .admin-row{align-items:flex-start;flex-direction:column}
+  .topbar{font-size:.73rem}
+  .welcome-logo{width:145px;height:145px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING WELCOME SCREEN -->
+
+<div class="welcome-screen" id="welcomeScreen">
+  <div class="welcome-content">
+
+    <img
+      class="welcome-logo"
+      src="assets/mnhs-logo.jpeg"
+      alt="Minuyan National High School logo"
+    >
+
+    <div class="welcome-label">WELCOME TO</div>
+
+    <h1>MINUYAN NATIONAL HIGH SCHOOL</h1>
+
+    <div class="welcome-subtitle">
+      SCHOOL POLICIES &amp; GUIDELINES PORTAL
+    </div>
+
+    <button
+      class="welcome-button"
+      onclick="enterWebsite()"
+    >
+      ENTER WEBSITE →
+    </button>
+
+  </div>
+</div>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+  <span>MINUYAN NATIONAL HIGH SCHOOL</span>
+  <span>School Policies • Guidelines • Announcements</span>
+</div>
+
+<!-- NAVIGATION -->
+
+<header>
+<nav class="nav">
+
+  <a class="brand" href="#home" onclick="showPage('home')">
+
+    <img src="assets/mnhs-logo.jpeg" alt="School logo">
+
+    <span>
+      MINUYAN NATIONAL HIGH SCHOOL
+      <small>POLICIES &amp; GUIDELINES PORTAL</small>
+    </span>
+
+  </a>
+
+  <button
+    class="nav-toggle"
+    id="navToggle"
+    aria-label="Open navigation"
+  >☰</button>
+
+  <div class="navlinks" id="navLinks">
+
+    <button class="active" data-page="home">Home</button>
+    <button data-page="policies">Policies</button>
+    <button data-page="announcements">Announcements</button>
+    <button data-page="about">About</button>
+    <button data-page="contact">Contact</button>
+    <button data-page="admin">Administrator</button>
+
+  </div>
+
+</nav>
+</header>
+
+<!-- HOME HERO -->
+
+<section class="hero" id="homeHero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <div class="eyebrow">A Reliable School Information Hub</div>
+
+      <h1>
+        Know the Rules.<br>
+        Stay Informed.
+      </h1>
+
+      <p>
+        Find school policies, student guidelines, important
+        announcements, and helpful information in one
+        organized place.
+      </p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+
+        <button
+          class="btn btn-light"
+          onclick="showPage('policies')"
+        >
+          Explore Policies →
+        </button>
+
+        <button
+          class="btn btn-maroon"
+          onclick="showPage('announcements')"
+        >
+          View Announcements
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <img
+        class="hero-logo"
+        src="assets/mnhs-logo.jpeg"
+        alt="Minuyan National High School logo"
+      >
+
+      <b>MINUYAN NATIONAL HIGH SCHOOL</b>
+
+      <h2 style="color:white">
+        One Place for School Information.
+      </h2>
+
+      <p>
+        Access the guidelines you need and stay updated
+        with school reminders.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong id="policyCount">6</strong>
+          Available Policies
+        </div>
+
+        <div class="stat">
+          <strong id="announcementCount">2</strong>
+          Announcements
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<main>
+
+<!-- HOME PAGE -->
+
+<section class="page active" id="page-home">
+
+  <div class="page-heading">
+
+    <div class="kicker">Start Here</div>
+
+    <h2>Explore the Portal</h2>
+
+    <p>
+      Choose a section to find the information you need.
+    </p>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+
+      <h3>📘 School Policies</h3>
+
+      <p class="muted">
+        Browse and search school policies and student guidelines.
+      </p>
+
+      <button
+        class="card-link"
+        onclick="showPage('policies')"
+      >
+        Browse policies →
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <h3>📢 Announcements</h3>
+
+      <p class="muted">
+        Read important reminders and school updates.
+      </p>
+
+      <button
+        class="card-link"
+        onclick="showPage('announcements')"
+      >
+        View updates →
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <h3>🏫 About This Website</h3>
+
+      <p class="muted">
+        Learn about the purpose of this information portal.
+      </p>
+
+      <button
+        class="card-link"
+        onclick="showPage('about')"
+      >
+        Learn more →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- POLICIES PAGE -->
+
+<section class="page" id="page-policies">
+
+  <div class="page-heading">
+
+    <div class="kicker">Information Library</div>
+
+    <h2>School Policies &amp; Guidelines</h2>
+
+    <p>
+      Search for a topic or choose a category to find
+      the information you need.
+    </p>
+
+  </div>
+
+  <div class="search-panel">
+
+    <div class="search-row">
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search policies, keywords, or topics..."
+      >
+
+      <button
+        class="btn btn-primary"
+        id="searchButton"
+      >
+        Search
+      </button>
+
+    </div>
+
+    <div class="filters" id="filters"></div>
+
+    <div class="result-line" id="resultLine"></div>
+
+  </div>
+
+  <div
+    class="grid"
+    id="policyGrid"
+    style="margin-top:18px"
+  ></div>
+
+</section>
+
+<!-- ANNOUNCEMENTS PAGE -->
+
+<section class="page" id="page-announcements">
+
+  <div class="page-heading">
+
+    <div class="kicker">Stay Updated</div>
+
+    <h2>Latest Announcements</h2>
+
+    <p>
+      Important reminders and updates for the school community.
+    </p>
+
+  </div>
+
+  <div class="card" id="announcementList"></div>
+
+</section>
+
+<!-- ABOUT PAGE -->
+
+<section class="page" id="page-about">
+
+  <div class="page-heading">
+
+    <div class="kicker">Who We Are</div>
+
+    <h2>About This Website</h2>
+
+    <p>
+      A simple and organized way to access school information.
+    </p>
+
+  </div>
+
+  <div class="two-col">
+
+    <div class="card">
+
+      <h3>📘 Our Purpose</h3>
+
+      <p>
+        This platform is designed to make school policies
+        and guidelines easier to find, understand, and access.
+        It serves as an information hub for students and
+        authorized school administrators.
+      </p>
+
+      <p class="muted">
+        This website is a student research project prototype.
+      </p>
+
+    </div>
+
+    <div class="card faq">
+
+      <h3>❔ Frequently Asked Questions</h3>
+
+      <details>
+
+        <summary>Who can use this website?</summary>
+
+        <p>
+          Students and other members of the school community
+          may browse published information.
+        </p>
+
+      </details>
+
+      <details>
+
+        <summary>Can I download a policy?</summary>
+
+        <p>
+          Use your browser's print option to save an available
+          page as PDF.
+        </p>
+
+      </details>
+
+      <details>
+
+        <summary>What if I cannot find a policy?</summary>
+
+        <p>
+          Contact the school office or authorized personnel.
+        </p>
+
+      </details>
+
+      <details>
+
+        <summary>Are online copies always official?</summary>
+
+        <p>
+          For confirmation, consult the school office and
+          the latest officially issued document.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT PAGE -->
+
+<section class="page" id="page-contact">
+
+  <div class="page-heading">
+
+    <div class="kicker">Need Assistance?</div>
+
+    <h2>Contact Information</h2>
+
+    <p>
+      For questions or clarification, please reach out
+      through the school's official channels.
+    </p>
+
+  </div>
+
+  <div class="two-col">
+
+    <div class="card">
+
+      <div class="contact-item">
+
+        <span>🏫</span>
+
+        <div>
+          <b>School</b>
+          Minuyan National High School
+        </div>
+
+      </div>
+
+      <div class="contact-item">
+
+        <span>📍</span>
+
+        <div>
+          <b>Location</b>
+          Please refer to the school's official address
+          and contact details.
+        </div>
+
+      </div>
+
+      <div class="contact-item">
+
+        <span>🏢</span>
+
+        <div>
+          <b>Office</b>
+          School Administration / Guidance Office
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Before Sending an Inquiry</h3>
+
+      <p>
+        Please include the policy title or topic you are
+        asking about. Do not share passwords, private student
+        records, or sensitive personal information through
+        this demo website.
+      </p>
+
+      <p class="muted">
+        Add the school's verified telephone number and
+        official email address here before publishing.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ADMINISTRATOR PAGE -->
+
+<section class="page" id="page-admin">
+
+  <div class="page-heading">
+
+    <div class="kicker">Restricted Area</div>
+
+    <h2>Administrator Dashboard</h2>
+
+    <p>
+      Manage the policy information displayed on this website.
+    </p>
+
+  </div>
+
+  <div class="notice">
+
+    <b>Prototype Notice:</b>
+    Changes are saved only in this browser. This demo login
+    is not secure and is not suitable for real school accounts.
+
+  </div>
+
+  <div id="adminLogin" class="card">
+
+    <h3>Administrator Login</h3>
+
+    <p class="muted">Demonstration password only.</p>
+
+    <div class="field">
+
+      <label for="adminPassword">Demo Password</label>
+
+      <input
+        id="adminPassword"
+        type="password"
+        placeholder="Enter demo password"
+      >
+
+    </div>
+
+    <button class="btn btn-primary" id="loginButton">
+      Log In
+    </button>
+
+  </div>
+
+  <section id="adminDashboard" class="hidden">
+
+    <div class="card">
+
+      <h3>Policy Management</h3>
+
+      <p class="muted">
+        Add, edit, archive, or restore policies.
+      </p>
+
+      <button
+        class="btn btn-primary"
+        id="addPolicyButton"
+      >
+        ＋ Add New Policy
+      </button>
+
+      <div class="admin-list" id="adminPolicyList"></div>
+
+    </div>
+
+    <div class="card" style="margin-top:18px">
+
+      <h3>Announcement Management</h3>
+
+      <p class="muted">
+        Publish reminders and updates.
+      </p>
+
+      <button
+        class="btn btn-primary"
+        id="addAnnouncementButton"
+      >
+        ＋ Add Announcement
+      </button>
+
+      <div
+        class="admin-list"
+        id="adminAnnouncementList"
+      ></div>
+
+    </div>
+
+    <button
+      class="btn btn-light"
+      id="logoutButton"
+      style="margin-top:16px"
+    >
+      Log Out
+    </button>
+
+  </section>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <b>MINUYAN NATIONAL HIGH SCHOOL</b><br>
+      <small>School Policies &amp; Guidelines Portal</small>
+    </div>
+
+    <div>
+      <small>Student Researchers</small><br>
+
+      <span class="researchers">
+        Carl Catalogo • Alliyah De Belen • Macouvex Llander
+      </span>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- MODAL -->
+
+<div
+  id="modalBackdrop"
+  class="welcome-screen"
+  style="display:none;background:#071a35b8;z-index:1100"
+>
+
+  <div
+    class="card"
+    style="width:min(650px,100%);max-height:90vh;overflow:auto;text-align:left;color:var(--ink)"
+  >
+
+    <div style="display:
